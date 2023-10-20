@@ -1,0 +1,37 @@
+<html>
+    <title>BANKING </title>
+    <link rel="stylesheet" href="banking.css">
+    <script src="banking.js"></script>
+    <h1 class="heading"> CREDIT/DEPOSIT </h1>
+    <body>
+        <div class="section">
+            <nav>
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/index.html" target="_blank"> Home </a></li>
+                    <li><a href="#">Credit</a></li>
+                    <li><a href="#">Deposit</a></li>
+                    <li><a href="#">Balance</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--END OF THE HEAD-->
+        <div class="creditcash">
+            <h2>Enter the Amount to be credited : </h2>
+            <form onsubmit="takeValue()">
+                <input type="text" name="name" id="input2" placeholder="AMOUNT TO CREDIT">
+                <button class="submit">ENTER</button>
+                <p id="demo"></p>
+            </form>
+        </div>
+        <div class="depositcash">
+            <h2>Enter the amount to be deposited</h2>
+            <form onsubmit="getValue()">
+                <input type="text" name="name" id="input3" placeholder="AMOUNT TO BE DEPOSITED">
+                <button class="submit">ENTER</button>
+            </form>
+        </div>
+        <section class="bs">
+        <a href="http://127.0.0.1:5500/balance.html" target="_blank"> BALANCE STATEMENT </a>
+    </section>
+    </body>
+</html>

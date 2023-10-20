@@ -1,0 +1,43 @@
+*{
+    background-color: bisque;
+}
+.bal a{
+    padding: 20px;
+    margin: 30px;
+    font-size: 22px;
+}
+.bal a:link{
+    color: black;
+    text-decoration: none;
+
+}
+.bal a:hover{
+    color: red;
+    transition: 0.2s;
+}
+.bal a:active{
+    color: green;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 20px;
+}
+nav ul li a:link{
+    color: black;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: red;
+    transition: 0.5s;
+}
+nav ul li a:active{
+    color: yellow;
+}

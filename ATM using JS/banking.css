@@ -1,0 +1,96 @@
+*{
+    background-color: rgb(253, 167, 233);
+}
+.heading{
+    font-size: 45px;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 20px;
+}
+nav ul li a:link{
+    color: black;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: red;
+    transition: 0.5s;
+}
+nav ul li a:active{
+    color: yellow;
+}
+.credit{
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.submit{
+    color: rgb(0, 0, 0);
+    background-color: whitesmoke;
+    width: 80;
+    height: 35;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .5s;
+   
+
+}
+.submit:hover{
+    background-color:  rgb(0, 0, 0);
+    border: 2px solid black;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+
+}
+.credit form input:first-child{
+    border: 2px solid orangered;
+    padding: 15px 120px 13px 14px;
+    width: 50%;
+    display: inline-block;
+    border-radius: 30px;
+    color: black;
+    font-size: 18px;
+}
+.deposit{
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.deposit form input:first-child{
+    border: 2px solid rgba(0, 81, 255, 0.889);
+    padding: 15px 120px 13px 14px;
+    width: 50%;
+    display: inline-block;
+    border-radius: 30px;
+    color: black;
+    font-size: 18px;
+}
+.bs a{
+    padding: 20px;
+    margin: 30px;
+    font-size: 22px;
+}
+.bs a:link{
+    color: black;
+    text-decoration: none;
+
+}
+.bs a:hover{
+    color: red;
+    transition: 0.2s;
+}
+.bs a:active{
+    color: green;
+}
