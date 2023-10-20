@@ -1,0 +1,47 @@
+body{
+    background-color: beige;
+}
+.container{
+    max-width: 800px;
+    margin-top: 10%;
+    margin-left: 25%;
+    border: 3px dashed black;
+    padding: 20px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 10px;
+    
+
+}
+h1{
+    color: brown;
+}
+
+.dob-input{
+    width: 200px;
+    padding: 15px;
+    margin: 20px;
+    font-size: 16px;
+    background-color: antiquewhite;
+    cursor: text;
+
+}
+
+.calculate{
+    padding: 15px;
+    border-radius: 2px solid black;
+    background-color: green;
+    color: aliceblue;
+    cursor: pointer;
+
+}
+
+.calculate:hover{
+    background-color: greenyellow;
+    color:black
+}
+
+.result{
+    font-size: 20px;
+    font-weight: bold;
+}

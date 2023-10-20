@@ -1,0 +1,165 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    background-color: bisque;
+}
+
+:root{
+    --cell-size:100px;
+    --mark-size:calc(var(--cell-size)*0.9);
+}
+
+body{
+    margin:0;
+}
+.board{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    justify-content:center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    position: relative;
+    cursor:pointer;
+    grid-template-columns: repeat(3,auto);  /* ithu than main line 3 row irukanum athuku aprm auto va ella column kum snd pannu nu */
+}
+
+.cell{
+    width : var(--cell-size);
+    height : var(--cell-size);
+    border : 2px solid black;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    position : relative;
+    cursor: pointer;
+
+}
+/*top ah clear pannurathuku */
+.cell:first-child,.cell:nth-child(2),.cell:nth-child(3){
+    border-top:  none;
+
+}
+/*bottom ah clear pannurathuku */
+.cell:last-child,.cell:nth-child(7),.cell:nth-child(8){
+    border-bottom: none;
+}
+
+/*left side ah clear pannurathuku */
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+
+/*right side ah clear pannurathuku */
+.cell:nth-child(3n){
+    border-right: none;
+}
+
+/* once click aana edathula thirumba click panna allow pannakudathu*/
+.cell.x,.cell.circle{
+    cursor: not-allowed;
+}
+
+.cell.x::before, .cell.x::after{
+    background-color: rgb(255, 0, 0);
+}
+
+.cell.circle::before{
+    background-color: black;
+}
+.cell.circle::after{
+    background-color: white;
+}
+
+/* already x viluntha edathula thirumba x ah hover panni kattakudathu nu intha function */
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+/*hover pannumpothu antha hover x and o ku grey color la oru shadowing effect kudukurathuku */
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    background-color: rgb(255, 255, 255);
+}
+
+/* oru cell ah select pannanum natha cell la ithuku munnadi entha elements um irukakoodathu apdi irunkum pothu maattum than enaku hover panni kattanum */
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    content: "";
+    position : absolute;
+    /* this below code x ah staight line ah kattum | like this ithuku aprm ena pannanum na antha | line ah cirsscross ah change pann we get x*/
+    width : calc(var(--mark-size)*0.15);
+    height : var(--mark-size);
+
+}
+
+
+/* | line ah before ku mattum ipo 45 deg ku cross paniyachu ithu mathari ini after kum change pannanum */
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg); 
+}
+
+/* so ipo after kum -45 deg kudutha athu cross aagirum so we get X properly */
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg); 
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    content: "";
+    position : absolute;
+    border-radius: 50%;
+}
+
+/* circle ku vendi intha code ithu before the hover*/
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width : var(--mark-size);
+    height : var(--mark-size);
+}
+
+/* circle ku vendi intha code ithu after the hover*/
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width : calc(var(--mark-size)*0.8);
+    height : calc(var(--mark-size)*0.8);
+    background-color: whitesmoke;
+}
+
+.winning-message{
+    display:none;
+    position : fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(156, 245, 240, 0.708);
+    justify-content: center;
+    align-items: center;
+    color:black;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message >button{
+    font-size: 4rem;
+    background-color: rgb(255, 247, 0);
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+.winning-message >button:hover{
+    background-color: rgb(98, 227, 24);
+    border-color: rgb(253, 249, 184);
+    color:rgb(255, 255, 255);
+}
+
+.winning-message.show{
+    display: flex;
+    
+}
